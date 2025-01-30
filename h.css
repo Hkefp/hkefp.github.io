@@ -3,8 +3,6 @@ html {
   height: 100%;
 }
 
-
-  
   .blink { animation: blink 2.5s linear infinite; }
   @keyframes blink { 50% {opacity: 0;}}
   
