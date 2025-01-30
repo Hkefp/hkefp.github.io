@@ -26,6 +26,7 @@ html {
   .no {
     font-size: 50px; 
     position: fixed;
+    text-align: center;
   }
   
   a:link, a:visited, a:hover, a:active {
