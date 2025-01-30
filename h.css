@@ -22,15 +22,15 @@ html {
     text-align: center;
     font-size: 20vmin;
   }
-  
-  .no {
-    font-size: 50px; 
-    position: fixed;
-  }
 
   .description {
     text-align: center;
     font-size: 15vmin;
+  }
+
+  .no {
+    font-size: 50px; 
+    position: fixed;
   }
   
   a:link, a:visited, a:hover, a:active {
