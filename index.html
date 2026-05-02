@@ -1,17 +1,131 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>hkefp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="keywords" content="H">
-    <meta name="description" content="H">
-    <meta property="og:title" content="H">
-    <meta name="theme-color" content="#36393e">
-    <link rel="stylesheet" type="text/css" href="h.css">
-  </head>
-  <body>
-    <div class="text theletter"> H </div>
-   </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hkefp</title>
+    <link rel="icon" href="web/circle.png" type="image/png">
+    <style>
+
+        @font-face {
+            font-family: "surface";
+            src: url("web/ubuntu.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            background: #99d9ea;
+            color: #ffffff;
+            font-family: "surface";
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 30px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            margin: inherit;
+        }
+
+        .header {
+            margin-bottom: 9px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 0px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+    
+
+        h1 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: -3px;
+            background: #ffffff;
+            background-clip: text;
+        }
+
+        .links {
+            display: flex;
+            gap: 7px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0px;
+        }
+
+        
+        .links a {
+            padding: 0px 0px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+
+            <div class="logo">
+                <img src="web/hkefp.png" alt="Hkefp" draggable="false">
+            </div>
+
+            <h1>Hkefp</h1>
+
+        </div>
+
+        <div class="links">
+            <a href="https://osu.ppy.sh/users/hkefp" target="_blank">osu!</a>
+            <a href="https://www.youtube.com/@hkefp" target="_blank">youtube</a>
+            <a href="https://twitch.tv/hke1p" target="_blank">twitch</a>
+            <a href="https://github.com/Hkefp" target="_blank">github</a>
+            <a href="https://steamcommunity.com/id/Hkefp/" target="_blank">steam</a>
+            <a href="https://psnprofiles.com/Hkefp" target="_blank">psn</a>
+        </div>
+    </div>
+
+
+</body>
 </html>
 
 
