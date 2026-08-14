@@ -8,16 +8,14 @@
     <link rel="icon" href="circle.png" type="image/png">
 
     <meta content="Hkefp" property="og:title" />
-    <meta content="https://hkefp.github.io" property="og:url" />
-    <meta content="https://raw.githubusercontent.com/Hkefp/hkefp.github.io/refs/heads/main/hkefp.png" property="og:image" />
+    <meta content="https://hkefp.xyz" property="og:url" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <style>
 
-        @font-face {
-            font-family: "ubuntu";
-            src: url("ubuntu.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-        }
 
         * {
             margin: 0;
@@ -29,8 +27,8 @@
         body {
             background: #99d9ea; 
             color: #ffffff;
-            font-family: "ubuntu";
             min-height: 100vh;
+            font-family: "Exo 2", sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -45,9 +43,8 @@
             background: rgba(0, 0, 0, 0.25);
             padding: 30px 30px;
             border-radius: 10px;
+            margin-bottom: 10px;
             backdrop-filter: blur(5px);
-            margin: inherit;
-            
             box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
         }
 
@@ -91,12 +88,14 @@
             font-weight: 500;
             background: #ffffff;
             background-clip: text;
+            font-weight: 600;
         }
 
         .subtitle {
             font-size: 14px;
             color: rgba(255, 255, 255, 0.35);
             margin-top: 2px;
+            font-weight: 550;
         }
 
         @media (max-width: 480px) {
@@ -131,7 +130,7 @@
             background: rgba(0, 0, 0, 0.2);
             border-radius: 8px;
             text-decoration: none;
-            color: #ffffff;
+            color: #fff;
             flex: 1 1 calc(50% - 4px);
             min-width: 200px;
         }
@@ -159,11 +158,15 @@
             flex-direction: column;
             align-items: flex-start;
             text-align: left;
+            font-weight: 200;
+            font-weight: 400;
         }
 
         .link-name {
             font-size: 16px;
             font-weight: 500;
+            text-transform: lowercase;
+            font-weight: 550;
         }
 
         .link-url {
@@ -174,8 +177,19 @@
         .view-count {
             margin-top: 10px;
             margin-bottom: -18px;
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.35);
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            font-weight: 500;
+        }
+
+        .view-count svg {
+            width: 13px;
+            height: 13px;
+            opacity: 0.7;
         }
 
         
@@ -261,15 +275,24 @@
             </a>
         </div>
 
-        <div class="view-count"><span id="view-count-num">···</span> views</div>
+        <div class="view-count">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <span id="view-count-num">--</span>
+        </div>
     </div>
 
-    <script>
-        fetch('https://counterapi.com/api/hkefp.github.io/view/home')
-            .then(function (res) { return res.json(); })
-            .then(function (data) {
-                document.getElementById('view-count-num').textContent = data.value.toLocaleString();
-            });
-    </script>
+<script>
+    Promise.all([
+        fetch('https://counterapi.com/api/hkefp.github.io/view/home').then(function (res) { return res.json(); }),
+        fetch('https://counterapi.com/api/hkefp.online/view/home').then(function (res) { return res.json(); }),
+        fetch('https://counterapi.com/api/hkefp.xyz/view/home').then(function (res) { return res.json(); })
+    ]).then(function (results) {
+        var total = results[0].value + results[1].value + results[2].value;
+        document.getElementById('view-count-num').textContent = total.toLocaleString();
+    });
+</script>
 </body>
 </html>
