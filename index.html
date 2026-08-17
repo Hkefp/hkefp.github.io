@@ -286,14 +286,11 @@
     </div>
 
 <script>
-    Promise.all([
-        fetch('https://counterapi.com/api/hkefp.github.io/view/home').then(function (res) { return res.json(); }),
-        fetch('https://counterapi.com/api/hkefp.online/view/home').then(function (res) { return res.json(); }),
-        fetch('https://counterapi.com/api/hkefp.xyz/view/home').then(function (res) { return res.json(); })
-    ]).then(function (results) {
-        var total = results[0].value + results[1].value + results[2].value;
-        document.getElementById('view-count-num').textContent = total.toLocaleString();
-    });
+    fetch('https://counterapi.com/api/hkefp.xyz/view/home')
+        .then(function (res) { return res.json(); })
+        .then(function (result) {
+            document.getElementById('view-count-num').textContent = result.value.toLocaleString();
+        });
 </script>
 </body>
 </html>
