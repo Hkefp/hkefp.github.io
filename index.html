@@ -275,22 +275,7 @@
                 </span>
             </a>
         </div>
-
-        <div class="view-count">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                <circle cx="12" cy="12" r="3"/>
-            </svg>
-            <span id="view-count-num">--</span>
-        </div>
     </div>
 
-<script>
-    fetch('https://counterapi.com/api/hkefp.xyz/view/home')
-        .then(function (res) { return res.json(); })
-        .then(function (result) {
-            document.getElementById('view-count-num').textContent = result.value.toLocaleString();
-        });
-</script>
 </body>
 </html>
